@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Games/Scenes/SealBounce.unity
+  isLoaded: 1
+  isActive: 1
