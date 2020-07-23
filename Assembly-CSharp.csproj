@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B09B3773-B4F4-68D0-5AFD-7EA49BA88B9B}</ProjectGuid>
+    <ProjectGuid>{F3CCCC65-9CAF-6293-CFBA-3B68FB497BAC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,14 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Games\Scripts\Bonehead.cs" />
-    <Compile Include="Assets\Games\Scripts\Demon.cs" />
-    <Compile Include="Assets\Games\Scripts\Ghost.cs" />
-    <Compile Include="Assets\Games\Scripts\KBattle.cs" />
-    <Compile Include="Assets\Games\Scripts\KImage.cs" />
-    <Compile Include="Assets\Games\Scripts\Seal.cs" />
-    <Compile Include="Assets\Games\Scripts\SealHp.cs" />
-    <Compile Include="Assets\Games\Scripts\Spawn.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Bonehead.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Demon.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Ghost.cs" />
+    <Compile Include="Assets\Minigames\Scripts\KBattle.cs" />
+    <Compile Include="Assets\Minigames\Scripts\KImage.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Seal.cs" />
+    <Compile Include="Assets\Minigames\Scripts\SealHp.cs" />
+    <Compile Include="Assets\Minigames\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\AffectionDisplay.cs" />
     <Compile Include="Assets\Scripts\Classes.cs" />
     <Compile Include="Assets\Scripts\CustomScenes\FirstDay.cs" />
@@ -87,19 +87,19 @@
     <Compile Include="Assets\Scripts\TextnEvent.cs" />
     <Compile Include="Assets\Scripts\TextOnly.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -303,19 +303,19 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/nicho/Documents/LovestuckAcademyUnity2/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

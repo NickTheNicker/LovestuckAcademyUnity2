@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bonehead : MonoBehaviour
+public class Demon : MonoBehaviour
 {
     // Cached References.
+    SavenSceneLoader saveNScene;
     BoxCollider2D box;
     CapsuleCollider2D cap;
-    public Rigidbody2D rigid;
+    Rigidbody2D rigid;
     SpriteRenderer sprite;
     Transform ePlace;
     Transform pPlace;
 
-    int eHealth = 2;
+    int eHealth = 30;
     int color;
     readonly float eSpeed = 10f;
-    readonly float maxSpeed= 20f;
-    
-    
+    readonly float maxSpeed = 30f;
+
+
     // Methods.
 
     // Makes the enemy follow the player.
     private void Follow()
     {
-        if (ePlace.position.x < pPlace.position.x )
+        if (ePlace.position.x < pPlace.position.x)
         {
             rigid.velocity = new Vector2(eSpeed, rigid.velocity.y);
         }
@@ -64,42 +65,8 @@ public class Bonehead : MonoBehaviour
     {
         if (cap.IsTouchingLayers(LayerMask.GetMask("Area")))
         {
-            rigid.velocity = new Vector2(Mathf.Sign(pPlace.position.x) * 20, rigid.velocity.y);
+            rigid.velocity = new Vector2(Mathf.Sign(pPlace.position.x) * 15, Mathf.Sign(pPlace.position.x) * -15);
         }
-    }
-
-
-    // Changes the colour of the enemy if it collides with something except other enemies.
-    public void Colour()
-    {
-        switch(color)
-        {
-            // Red.
-            case 1: 
-                sprite.color = new Color(1f, 0f, 0f);
-                break;
-
-            // Yellow.
-            case 2:
-
-                sprite.color = new Color(1f, 1f, 0f);
-                break;
-
-            // Blue.
-            case 3:
-                sprite.color = new Color(1f, 0f, 0f);
-                break;
-
-            // Purple.
-            case 4:
-                sprite.color = new Color(1f, 0f, 1f);
-                break;
-        }
-
-        if ((box.IsTouchingLayers(LayerMask.GetMask("Player"))) || (box.IsTouchingLayers(LayerMask.GetMask("Area"))))
-        {
-            color = Random.Range(1, 5);
-        } 
     }
 
     // Decreases enemy health by 1 after colliding with the player.
@@ -110,21 +77,32 @@ public class Bonehead : MonoBehaviour
             eHealth--;
         }
     }
-    
-    // Destroys enemy when health < 0.
+
+    // Goes to the next scene.
+    public void NextScene()
+    {
+        saveNScene.LoadScene();
+    }
+
+    // Kills the enemy and loads the next scene after a delay.
     public void Death()
     {
         if (eHealth < 0)
         {
-            Destroy(gameObject);
+            sprite.enabled = false;
+            box.enabled = false;
+            cap.enabled = false;
+
+            Invoke("NextScene", 2);
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        saveNScene = GameObject.Find("ScriptHolder").GetComponent<SavenSceneLoader>();
         box = GetComponent<BoxCollider2D>();
-        cap = GetComponentInChildren<CapsuleCollider2D>();
+        cap = GetComponent<CapsuleCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         ePlace = GetComponent<Transform>();
@@ -136,8 +114,8 @@ public class Bonehead : MonoBehaviour
     {
         Follow();
         Avoid();
-        Colour();
         Damage();
         Death();
     }
 }
+

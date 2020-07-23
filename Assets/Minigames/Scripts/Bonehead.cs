@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost : MonoBehaviour
+public class Bonehead : MonoBehaviour
 {
     // Cached References.
     BoxCollider2D box;
@@ -14,16 +14,16 @@ public class Ghost : MonoBehaviour
 
     int eHealth = 2;
     int color;
-
-    readonly float eSpeed = 10f;
-    readonly float maxSpeed = 20f;
-
+    readonly float eSpeed = 8f;
+    readonly float maxSpeed= 20f;
+    
+    
     // Methods.
 
-    // Launches the enemy.
+    // Makes the enemy follow the player.
     private void Follow()
     {
-        if ((ePlace.position.x - 4) < pPlace.position.x)
+        if (ePlace.position.x < pPlace.position.x )
         {
             rigid.velocity = new Vector2(eSpeed, rigid.velocity.y);
         }
@@ -31,7 +31,7 @@ public class Ghost : MonoBehaviour
         {
             rigid.velocity = new Vector2(-eSpeed, rigid.velocity.y);
         }
-        if ((ePlace.position.y - 4) < pPlace.position.y)
+        if (ePlace.position.y < pPlace.position.y)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, eSpeed);
         }
@@ -72,10 +72,10 @@ public class Ghost : MonoBehaviour
     // Changes the colour of the enemy if it collides with something except other enemies.
     public void Colour()
     {
-        switch (color)
+        switch(color)
         {
             // Red.
-            case 1:
+            case 1: 
                 sprite.color = new Color(1f, 0f, 0f);
                 break;
 
@@ -99,7 +99,7 @@ public class Ghost : MonoBehaviour
         if ((box.IsTouchingLayers(LayerMask.GetMask("Player"))) || (box.IsTouchingLayers(LayerMask.GetMask("Area"))))
         {
             color = Random.Range(1, 5);
-        }
+        } 
     }
 
     // Decreases enemy health by 1 after colliding with the player.
@@ -110,7 +110,7 @@ public class Ghost : MonoBehaviour
             eHealth--;
         }
     }
-
+    
     // Destroys enemy when health < 0.
     public void Death()
     {
@@ -138,5 +138,6 @@ public class Ghost : MonoBehaviour
         Avoid();
         Colour();
         Damage();
+        Death();
     }
 }

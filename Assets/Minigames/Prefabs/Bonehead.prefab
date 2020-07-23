@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2439418205186793586}
   - component: {fileID: 2439418205186793589}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,9 +180,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 0828183beffa4db4dac0511594a6a001, type: 2}
   m_Interpolate: 0

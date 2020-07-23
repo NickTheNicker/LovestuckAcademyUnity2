@@ -132,16 +132,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Shiro/Club4.unity
     guid: b5720372e7d7ac3419e96574aa3ed7b5
   - enabled: 1
-    path: Assets/Games/Scenes/KLose.unity
+    path: Assets/Minigames/Scenes/KLose.unity
     guid: 238ad26e8f2ee2a43bf012e37c7366e0
   - enabled: 1
-    path: Assets/Games/Scenes/KWin.unity
+    path: Assets/Minigames/Scenes/KWin.unity
     guid: ac72575b66525a249bc41f18b9166909
   - enabled: 1
-    path: Assets/Games/Scenes/Knight.unity
+    path: Assets/Minigames/Scenes/Knight.unity
     guid: a7f5d247516862742a94952fe5006a49
   - enabled: 1
-    path: Assets/Games/Scenes/KBattle.unity
+    path: Assets/Minigames/Scenes/KBattle.unity
     guid: 94abb6d5186af164fbe9d1030b4965c6
   - enabled: 1
     path: Assets/Scenes/Lunch/Chase.unity
@@ -161,4 +161,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lilith/Roof5.unity
     guid: 96d54d0522c14534995f9636b3c05092
+  - enabled: 1
+    path: Assets/Minigames/Scenes/SealBounce.unity
+    guid: 6c31d83745f7d4f46973cfe5041d6e9f
   m_configObjects: {}

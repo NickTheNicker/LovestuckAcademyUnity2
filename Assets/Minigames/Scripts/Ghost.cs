@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Demon : MonoBehaviour
+public class Ghost : MonoBehaviour
 {
     // Cached References.
     BoxCollider2D box;
@@ -12,18 +12,18 @@ public class Demon : MonoBehaviour
     Transform ePlace;
     Transform pPlace;
 
-    int eHealth = 30;
+    int eHealth = 2;
     int color;
-    readonly float eSpeed = 20f;
-    readonly float maxSpeed = 30f;
 
+    readonly float eSpeed = 8f;
+    readonly float maxSpeed = 20f;
 
     // Methods.
 
-    // Makes the enemy follow the player.
+    // Launches the enemy.
     private void Follow()
     {
-        if (ePlace.position.x < pPlace.position.x)
+        if ((ePlace.position.x - 4) < pPlace.position.x)
         {
             rigid.velocity = new Vector2(eSpeed, rigid.velocity.y);
         }
@@ -31,7 +31,7 @@ public class Demon : MonoBehaviour
         {
             rigid.velocity = new Vector2(-eSpeed, rigid.velocity.y);
         }
-        if (ePlace.position.y < pPlace.position.y)
+        if ((ePlace.position.y - 4) < pPlace.position.y)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, eSpeed);
         }
@@ -64,7 +64,41 @@ public class Demon : MonoBehaviour
     {
         if (cap.IsTouchingLayers(LayerMask.GetMask("Area")))
         {
-            rigid.velocity = new Vector2(Mathf.Sign(pPlace.position.x) * 15, Mathf.Sign(pPlace.position.x) * -15);
+            rigid.velocity = new Vector2(Mathf.Sign(pPlace.position.x) * 20, rigid.velocity.y);
+        }
+    }
+
+
+    // Changes the colour of the enemy if it collides with something except other enemies.
+    public void Colour()
+    {
+        switch (color)
+        {
+            // Red.
+            case 1:
+                sprite.color = new Color(1f, 0f, 0f);
+                break;
+
+            // Yellow.
+            case 2:
+
+                sprite.color = new Color(1f, 1f, 0f);
+                break;
+
+            // Blue.
+            case 3:
+                sprite.color = new Color(1f, 0f, 0f);
+                break;
+
+            // Purple.
+            case 4:
+                sprite.color = new Color(1f, 0f, 1f);
+                break;
+        }
+
+        if ((box.IsTouchingLayers(LayerMask.GetMask("Player"))) || (box.IsTouchingLayers(LayerMask.GetMask("Area"))))
+        {
+            color = Random.Range(1, 5);
         }
     }
 
@@ -90,7 +124,7 @@ public class Demon : MonoBehaviour
     void Start()
     {
         box = GetComponent<BoxCollider2D>();
-        cap = GetComponent<CapsuleCollider2D>();
+        cap = GetComponentInChildren<CapsuleCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         ePlace = GetComponent<Transform>();
@@ -102,9 +136,8 @@ public class Demon : MonoBehaviour
     {
         Follow();
         Avoid();
+        Colour();
         Damage();
         Death();
-
     }
 }
-
