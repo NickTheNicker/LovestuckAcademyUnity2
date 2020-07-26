@@ -12,33 +12,36 @@ public class Demon : MonoBehaviour
     SpriteRenderer sprite;
     Transform ePlace;
     Transform pPlace;
+    Seal seal;
 
     int eHealth = 30;
-    int color;
     readonly float eSpeed = 10f;
-    readonly float maxSpeed = 30f;
-
+    readonly float maxSpeed = 10f;
 
     // Methods.
 
-    // Makes the enemy follow the player.
+    // Makes the enemy follow the player if the player is not invincible.
     private void Follow()
     {
-        if (ePlace.position.x < pPlace.position.x)
+        if (!seal.invincible)
         {
-            rigid.velocity = new Vector2(eSpeed, rigid.velocity.y);
-        }
-        else
-        {
-            rigid.velocity = new Vector2(-eSpeed, rigid.velocity.y);
-        }
-        if (ePlace.position.y < pPlace.position.y)
-        {
-            rigid.velocity = new Vector2(rigid.velocity.x, eSpeed);
-        }
-        else
-        {
-            rigid.velocity = new Vector2(rigid.velocity.x, -eSpeed);
+
+            if (ePlace.position.x < pPlace.position.x)
+            {
+                rigid.velocity = new Vector2(eSpeed, rigid.velocity.y);
+            }
+            else
+            {
+                rigid.velocity = new Vector2(-eSpeed, rigid.velocity.y);
+            }
+            if (ePlace.position.y < pPlace.position.y)
+            {
+                rigid.velocity = new Vector2(rigid.velocity.x, eSpeed);
+            }
+            else
+            {
+                rigid.velocity = new Vector2(rigid.velocity.x, -eSpeed);
+            }
         }
 
         // Prvents the enemy's speed from going beyond the set value.
@@ -65,7 +68,7 @@ public class Demon : MonoBehaviour
     {
         if (cap.IsTouchingLayers(LayerMask.GetMask("Area")))
         {
-            rigid.velocity = new Vector2(Mathf.Sign(pPlace.position.x) * 15, Mathf.Sign(pPlace.position.x) * -15);
+            rigid.velocity = new Vector2(Mathf.Sign(pPlace.position.x) * 20, rigid.velocity.y);
         }
     }
 
@@ -93,7 +96,7 @@ public class Demon : MonoBehaviour
             box.enabled = false;
             cap.enabled = false;
 
-            Invoke("NextScene", 2);
+            Invoke("NextScene", 1);
         }
     }
 
@@ -102,11 +105,12 @@ public class Demon : MonoBehaviour
     {
         saveNScene = GameObject.Find("ScriptHolder").GetComponent<SavenSceneLoader>();
         box = GetComponent<BoxCollider2D>();
-        cap = GetComponent<CapsuleCollider2D>();
+        cap = GetComponentInChildren<CapsuleCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         ePlace = GetComponent<Transform>();
         pPlace = FindObjectOfType<Seal>().transform;
+        seal = FindObjectOfType<Seal>().GetComponent<Seal>();
     }
 
     // Update is called once per frame

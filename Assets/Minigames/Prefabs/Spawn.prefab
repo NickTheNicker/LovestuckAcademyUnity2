@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2075031e7b6517408c55021a2c96152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonehead: {fileID: 2439418205191253308, guid: 6d1af1a6763068e4da3214c4829fdd82,
-    type: 3}
+  bPrefab: {fileID: 2439418205191253308, guid: 6d1af1a6763068e4da3214c4829fdd82, type: 3}
+  gPrefab: {fileID: 1566884854082005887, guid: f63e9f4739a5c1c45a45d23944b67434, type: 3}
+  dPrefab: {fileID: 1659212113499742945, guid: 97485a8a9a5aa4642a42b5df83ba858b, type: 3}

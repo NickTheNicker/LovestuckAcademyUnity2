@@ -164,4 +164,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/Scenes/SealBounce.unity
     guid: 6c31d83745f7d4f46973cfe5041d6e9f
+  - enabled: 1
+    path: Assets/Minigames/Scenes/SBEnd.unity
+    guid: adbc1f643d5805b48849b9d75d2445a9
+  - enabled: 1
+    path: Assets/Minigames/Scenes/SBStart.unity
+    guid: f4e55eda54cd8a64c9636c3e3bacde2b
   m_configObjects: {}

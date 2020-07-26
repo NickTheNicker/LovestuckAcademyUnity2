@@ -12,10 +12,10 @@ public class Spawn : MonoBehaviour
     // Location where enemies spawn.
     Vector2 spawnLocation = new Vector2(-9, 19);
 
-    // Spawns a "Bonehead" enemy every 5 seconds
+    // Spawns a "Bonehead" enemy periodically.
     public IEnumerator BSpawn()
     {
-        WaitForSeconds wait = new WaitForSeconds(5);
+        WaitForSeconds wait = new WaitForSeconds(2);
 
         GameObject bonehead = Instantiate(bPrefab, spawnLocation, bPrefab.transform.rotation);
 
@@ -24,10 +24,10 @@ public class Spawn : MonoBehaviour
         StartCoroutine(BSpawn());
     }
 
-    // Spawns a "Ghost" enemy every 6 seconds.
+    // Spawns a "Ghost" enemy periodically.
     public IEnumerator GSpawn()
     {
-        WaitForSeconds wait = new WaitForSeconds(6);
+        WaitForSeconds wait = new WaitForSeconds(3);
 
         GameObject ghost = Instantiate(gPrefab, spawnLocation, gPrefab.transform.rotation);
 
@@ -36,10 +36,10 @@ public class Spawn : MonoBehaviour
         StartCoroutine(GSpawn());
     }
 
-    // Spawns a "Demon" enemy after 65 seconds.
+    // Spawns a "Demon" enemy after a certain amount of time.
     public IEnumerator DSpawn()
     {
-        WaitForSeconds wait = new WaitForSeconds(65);
+        WaitForSeconds wait = new WaitForSeconds(45);
 
         yield return wait;
 

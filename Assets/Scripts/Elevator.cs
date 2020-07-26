@@ -149,7 +149,7 @@ public class Elevator : MonoBehaviour
             }
             else if ((!saveNScene.save.library4) && (saveNScene.save.eAffection >= 32))
             {
-                saveNScene.loadName = "Library4";
+                saveNScene.loadName = "Library5";
             }
             else saveNScene.loadName = "LibraryFill";
         }

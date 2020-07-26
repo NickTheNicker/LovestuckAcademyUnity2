@@ -14,8 +14,8 @@ public class Bonehead : MonoBehaviour
 
     int eHealth = 2;
     int color;
-    readonly float eSpeed = 8f;
-    readonly float maxSpeed= 20f;
+    readonly float eSpeed = 12f;
+    readonly float maxSpeed= 12f;
     
     
     // Methods.
@@ -76,26 +76,26 @@ public class Bonehead : MonoBehaviour
         {
             // Red.
             case 1: 
-                sprite.color = new Color(1f, 0f, 0f);
+                sprite.color = new Color(1f, 0.1f, 0.1f);
                 break;
 
             // Yellow.
             case 2:
-
-                sprite.color = new Color(1f, 1f, 0f);
+                sprite.color = new Color(1f, 1f, 0.2f);
                 break;
 
             // Blue.
             case 3:
-                sprite.color = new Color(1f, 0f, 0f);
+                sprite.color = new Color(0.2f, 0.2f, 1f);
                 break;
 
             // Purple.
             case 4:
-                sprite.color = new Color(1f, 0f, 1f);
+                sprite.color = new Color(1f, 0.2f, 1f);
                 break;
         }
 
+        // Chooses a random number between 1(inclusive) and 5(exclusive) to determine the sprite colour.
         if ((box.IsTouchingLayers(LayerMask.GetMask("Player"))) || (box.IsTouchingLayers(LayerMask.GetMask("Area"))))
         {
             color = Random.Range(1, 5);
@@ -129,6 +129,9 @@ public class Bonehead : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         ePlace = GetComponent<Transform>();
         pPlace = FindObjectOfType<Seal>().transform;
+
+        // Selects a random colour for the enemy to start off.
+        color = Random.Range(1, 5);
     }
 
     // Update is called once per frame

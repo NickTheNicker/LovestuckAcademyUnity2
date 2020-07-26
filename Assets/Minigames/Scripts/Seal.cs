@@ -6,6 +6,7 @@ public class Seal : MonoBehaviour
 {
     // Cached References.
     SavenSceneLoader saveNScene;
+    SpriteRenderer sprite;
     BoxCollider2D box;
     Rigidbody2D rigid;
     Component halo;
@@ -13,27 +14,33 @@ public class Seal : MonoBehaviour
     // Variables.
 
     // The player's health.
-    public int pHealth = 12;
-    int maxHealth = 12;
-    int cooldown;
+    public int pHealth = 10;
+    int maxHealth = 10;
+    public int cooldown;
     readonly float pSpeed = 30f;
     readonly float maxSpeed = 45f;
-    bool invincible = false;
+    public bool invincible = false;
 
     // Methods.
 
-    // Regenerates player health.
+    // Regenerates the player's health.
     public IEnumerator Regen()
     {
         WaitForSeconds wait = new WaitForSeconds(1);
+        while (pHealth > 0)
         {
             while (pHealth < maxHealth)
             {
                 pHealth++;
                 yield return wait;
-            }      
+            }
+            yield return wait;
         }
+
+        // The coroutine does not repeat by itself so it must be set manually.
+        StartCoroutine(Regen());
     }
+
 
     // Player's movement.
     private void Move()
@@ -94,6 +101,7 @@ public class Seal : MonoBehaviour
     // Increases cooldown by 1 every second if it is less than 7.
     public IEnumerator Cooldown()
     {
+        
         WaitForSeconds wait = new WaitForSeconds(1);
         while (cooldown < 7)
         {
@@ -128,24 +136,29 @@ public class Seal : MonoBehaviour
         }
     }
 
-    public IEnumerator RunPerSecond()
+    // Goes to the next scene.
+    public void NextScene()
     {
-        WaitForSeconds wait = new WaitForSeconds(1);
-        while (pHealth > 0)
-        {
-            StartCoroutine(Regen());
-            Debug.Log("yes");
-            yield return wait;
-        }
+        saveNScene.LoadScene();
+    }
 
-        // The coroutine does not repeat by itself so it must be set manually.
-        StartCoroutine(RunPerSecond());
+    // Kills the player and loads the next scene after a delay.
+    public void Death()
+    {
+        if (pHealth <= 0)
+        {
+            sprite.enabled = false;
+            box.enabled = false;
+
+            Invoke("NextScene", 2);
+        }
     }
 
     // Start is called before the first frame update.
     void Start()
     {
         saveNScene = GameObject.Find("ScriptHolder").GetComponent<SavenSceneLoader>();
+        sprite = GetComponent<SpriteRenderer>();
         box = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
         halo = GetComponent("Halo");
@@ -155,7 +168,7 @@ public class Seal : MonoBehaviour
 
         // Starts certain coroutines.
         StartCoroutine(Cooldown());
-        StartCoroutine(RunPerSecond());
+        StartCoroutine(Regen());
     }
 
     // Update is called once per frame.
@@ -163,6 +176,7 @@ public class Seal : MonoBehaviour
     {
         Move();
         Damage();
+        Death();
         ActivateInvincibility();
     }
 }

@@ -24,7 +24,7 @@ public class Classes : MonoBehaviour
     // Displays text corresponding to the "page" number for elements in the text array.
     public void TextDisplay()
     {
-            iText.text = text[page].ToString();
+        iText.text = text[page].ToString();
     }
 
     // Sets "page" as a random interger number between 1 and the page length(inclusive) when conditions are met.
@@ -78,6 +78,7 @@ public class Classes : MonoBehaviour
                 { 9, "Knight" },
                 { 10, "You" },
                 { 11, "Lonely"},
+                { 12, "SBStart"},
         };
 
 
