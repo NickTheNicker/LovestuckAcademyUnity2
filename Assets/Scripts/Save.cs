@@ -28,6 +28,7 @@ public class Save
     public bool club2;
     public bool club3;
     public bool club4;
+    public bool club5;
 
     // Lilith Events.
     public bool lMeet;
@@ -35,6 +36,7 @@ public class Save
     public bool roof2;
     public bool roof3;
     public bool roof4;
+    public bool roof5;
 
     // Elora Events.
     public bool eMeet;
@@ -42,4 +44,5 @@ public class Save
     public bool library2;
     public bool library3;
     public bool library4;
+    public bool library5;
 }

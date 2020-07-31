@@ -94,7 +94,7 @@ public class Seal : MonoBehaviour
         {
             invincible = true;
             pHealth--;
-            Invoke("Invincibility", 1);
+            Invoke("Invincibility", 1.4f);
         }
     }
 

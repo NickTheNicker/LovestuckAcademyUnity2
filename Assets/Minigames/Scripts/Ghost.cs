@@ -15,8 +15,8 @@ public class Ghost : MonoBehaviour
     int eHealth = 2;
     int color;
 
-    readonly float eSpeed = 18f;
-    readonly float maxSpeed = 18f;
+    readonly float eSpeed = 15f;
+    readonly float maxSpeed = 15f;
 
     // Methods.
 

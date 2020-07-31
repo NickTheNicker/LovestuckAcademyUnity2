@@ -75,22 +75,27 @@ public class Elevator : MonoBehaviour
         {
             if (!saveNScene.save.club1)
             {
+                saveNScene.save.club1 = true;
                 saveNScene.loadName = "Club1";
             }
             else if ((!saveNScene.save.club2) && (saveNScene.save.sAffection >=8))
             {
+                saveNScene.save.club2 = true;
                 saveNScene.loadName = "Club2";
             }
             else if ((!saveNScene.save.club3) && (saveNScene.save.sAffection >= 16))
             {
+                saveNScene.save.club3 = true;
                 saveNScene.loadName = "Club3";
             }
             else if ((!saveNScene.save.club4) && (saveNScene.save.sAffection >= 25))
             {
+                saveNScene.save.club4 = true;
                 saveNScene.loadName = "Club4";
             }
             else if ((!saveNScene.save.club4) && (saveNScene.save.sAffection >= 32))
             {
+                saveNScene.save.club5 = true;
                 saveNScene.loadName = "Club5";
             }
             else saveNScene.loadName = "ClubFill";
@@ -104,22 +109,27 @@ public class Elevator : MonoBehaviour
         {
             if (!saveNScene.save.roof1)
             {
+                saveNScene.save.roof1 = true;
                 saveNScene.loadName = "Roof1";
             }
             else if ((!saveNScene.save.roof2) && (saveNScene.save.lAffection >= 8))
             {
+                saveNScene.save.roof2 = true;
                 saveNScene.loadName = "Roof2";
             }
             else if ((!saveNScene.save.roof3) && (saveNScene.save.lAffection >= 16))
             {
+                saveNScene.save.roof3 = true;
                 saveNScene.loadName = "Roof3";
             }
             else if ((!saveNScene.save.roof4) && (saveNScene.save.lAffection >= 25))
             {
+                saveNScene.save.roof4 = true;
                 saveNScene.loadName = "Roof4";
             }
             else if ((!saveNScene.save.roof4) && (saveNScene.save.lAffection >= 32))
             {
+                saveNScene.save.roof5 = true;
                 saveNScene.loadName = "Roof5";
             }
             else saveNScene.loadName = "RoofFill";
@@ -133,22 +143,27 @@ public class Elevator : MonoBehaviour
         {
             if (!saveNScene.save.library1)
             {
+                saveNScene.save.library1 = true;
                 saveNScene.loadName = "Library1";
             }
             else if ((!saveNScene.save.library2) && (saveNScene.save.eAffection >= 8))
             {
+                saveNScene.save.library2 = true;
                 saveNScene.loadName = "Library2";
             }
             else if ((!saveNScene.save.library3) && (saveNScene.save.eAffection >= 16))
             {
+                saveNScene.save.library3 = true;
                 saveNScene.loadName = "Library3";
             }
             else if ((!saveNScene.save.library4) && (saveNScene.save.eAffection >= 25))
             {
+                saveNScene.save.library4 = true;
                 saveNScene.loadName = "Library4" ;
             }
             else if ((!saveNScene.save.library4) && (saveNScene.save.eAffection >= 32))
             {
+                saveNScene.save.library5 = true;
                 saveNScene.loadName = "Library5";
             }
             else saveNScene.loadName = "LibraryFill";
