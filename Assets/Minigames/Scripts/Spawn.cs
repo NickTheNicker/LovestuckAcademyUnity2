@@ -15,7 +15,7 @@ public class Spawn : MonoBehaviour
     // Spawns a "Bonehead" enemy periodically.
     public IEnumerator BSpawn()
     {
-        WaitForSeconds wait = new WaitForSeconds(2);
+        WaitForSeconds wait = new WaitForSeconds(1);
 
         GameObject bonehead = Instantiate(bPrefab, spawnLocation, bPrefab.transform.rotation);
 
@@ -27,7 +27,7 @@ public class Spawn : MonoBehaviour
     // Spawns a "Ghost" enemy periodically.
     public IEnumerator GSpawn()
     {
-        WaitForSeconds wait = new WaitForSeconds(3);
+        WaitForSeconds wait = new WaitForSeconds(4);
 
         GameObject ghost = Instantiate(gPrefab, spawnLocation, gPrefab.transform.rotation);
 

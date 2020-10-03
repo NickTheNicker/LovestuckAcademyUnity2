@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/nicho/Documents/LovestuckAcademy/LovestuckAcademy.exe
+C:/Users/nicho/Documents/Programs/LovestuckAcademy/LovestuckAcademy.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Introduction.unity
@@ -57,6 +57,8 @@ Assets/Scenes/Lilith/Roof5.unity
 Assets/Minigames/Scenes/SealBounce.unity
 Assets/Minigames/Scenes/SBEnd.unity
 Assets/Minigames/Scenes/SBStart.unity
+Assets/Scenes/Elora/Library5.unity
+Assets/Scenes/Shiro/Club5.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
